@@ -1,0 +1,68 @@
+=== SD4FT-MINER: Gender Differences ===
+
+Comparing: More Females vs More Males
+
+
+CleverMiner task processing summary:
+
+Task type : SD4ftMiner
+Number of verifications : 16
+Number of rules : 2
+Total time needed : 00h 00m 00s
+Time of data preparation : 00h 00m 00s
+Time of rule mining : 00h 00m 00s
+
+
+
+
+List of rules:
+RULEID BASE1 BASE2 RatioConf DeltaConf Rule
+     1   345   537    1.372    +0.170  county_size(Small) => CFR_level(High CFR) | --- : gender_group(More Females) x gender_group(More Males)
+     2   642   207    1.452    +0.170  county_size(Small) => CFR_level(Low CFR) | --- : gender_group(More Males) x gender_group(More Females)
+
+
+=== Rule 1 ===
+
+
+Rule id : 1
+
+Base1 :   345 Base2 :   537  Relative base 1 : 0.110 Relative base 2 : 0.171 CONF1 : 0.625  CONF2 : +0.455  Delta Conf : +0.170 Ratio Conf : +1.372
+
+Cedents:
+  antecedent : county_size(Small)
+  succcedent : CFR_level(High CFR)
+  condition  : ---
+  first set  : gender_group(More Females)
+  second set : gender_group(More Males)
+
+Fourfold tables:
+FRST|  S  |  ¬S |  SCND|  S  |  ¬S |
+----|-----|-----|  ----|-----|-----| 
+ A  |  345|  207|   A  |  537|  642|
+----|-----|-----|  ----|-----|-----|
+¬A  |  504|  489|  ¬A  |  173|  244|
+----|-----|-----|  ----|-----|-----|
+
+
+=== Rule 2 ===
+
+
+Rule id : 2
+
+Base1 :   642 Base2 :   207  Relative base 1 : 0.204 Relative base 2 : 0.066 CONF1 : 0.545  CONF2 : +0.375  Delta Conf : +0.170 Ratio Conf : +1.452
+
+Cedents:
+  antecedent : county_size(Small)
+  succcedent : CFR_level(Low CFR)
+  condition  : ---
+  first set  : gender_group(More Males)
+  second set : gender_group(More Females)
+
+Fourfold tables:
+FRST|  S  |  ¬S |  SCND|  S  |  ¬S |
+----|-----|-----|  ----|-----|-----| 
+ A  |  642|  537|   A  |  207|  345|
+----|-----|-----|  ----|-----|-----|
+¬A  |  244|  173|  ¬A  |  489|  504|
+----|-----|-----|  ----|-----|-----|
+

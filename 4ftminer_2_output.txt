@@ -1,0 +1,415 @@
+=== RACIAL DISPARITIES IN COVID-19 MORTALITY ===
+Research Question: Do counties with higher Black population have higher COVID-19 mortality?
+
+=== CFR Analysis ===
+
+CleverMiner task processing summary:
+
+Task type : 4ftMiner
+Number of verifications : 30
+Number of rules : 9
+Total time needed : 00h 00m 00s
+Time of data preparation : 00h 00m 00s
+Time of rule mining : 00h 00m 00s
+
+
+List of rules:
+RULEID BASE  CONF  AAD    Rule
+     1   580 0.623 +0.246 black_category(High Black Population) => CFR_Category(High CFR) | ---
+     2   375 0.691 +0.381 black_category(High Black Population) & income_category(Medium (40-60k)) => CFR_Category(High CFR) | ---
+     3   553 0.577 +0.154 black_category(Medium Black Population) => CFR_Category(Low CFR) | ---
+     4   499 0.623 +0.246 income_category(High (60-80k)) => CFR_Category(Low CFR) | ---
+     5   312 0.661 +0.322 income_category(High (60-80k)) & poverty_category(Low (<10%)) => CFR_Category(Low CFR) | ---
+     6   328 0.607 +0.215 income_category(Medium (40-60k)) & poverty_category(High (15-20%)) => CFR_Category(High CFR) | ---
+     7   352 0.603 +0.205 poverty_category(High (15-20%)) => CFR_Category(High CFR) | ---
+     8   463 0.626 +0.251 poverty_category(Low (<10%)) => CFR_Category(Low CFR) | ---
+     9   244 0.687 +0.375 poverty_category(Very High (20%+)) => CFR_Category(High CFR) | ---
+
+
+
+=== Deaths per 100k Analysis ===
+
+CleverMiner task processing summary:
+
+Task type : 4ftMiner
+Number of verifications : 29
+Number of rules : 8
+Total time needed : 00h 00m 00s
+Time of data preparation : 00h 00m 00s
+Time of rule mining : 00h 00m 00s
+
+
+List of rules:
+RULEID BASE  CONF  AAD    Rule
+     1   556 0.597 +0.194 black_category(High Black Population) => deaths_category(High Deaths) | ---
+     2   382 0.703 +0.407 black_category(High Black Population) & income_category(Medium (40-60k)) => deaths_category(High Deaths) | ---
+     3   497 0.620 +0.241 income_category(High (60-80k)) => deaths_category(Low Deaths) | ---
+     4   286 0.606 +0.212 income_category(High (60-80k)) & poverty_category(Low (<10%)) => deaths_category(Low Deaths) | ---
+     5   329 0.609 +0.219 income_category(Medium (40-60k)) & poverty_category(High (15-20%)) => deaths_category(High Deaths) | ---
+     6   353 0.604 +0.209 poverty_category(High (15-20%)) => deaths_category(High Deaths) | ---
+     7   455 0.615 +0.230 poverty_category(Low (<10%)) => deaths_category(Low Deaths) | ---
+     8   260 0.732 +0.465 poverty_category(Very High (20%+)) => deaths_category(High Deaths) | ---
+
+
+
+=== Detailed Rules - CFR ===
+
+=== CFR Rule 1 ===
+
+
+Rule id : 1
+
+Base :   580  Relative base : 0.206  CONF : 0.623  AAD : +0.246  BAD : -0.246
+
+Cedents:
+  antecedent : black_category(High Black Population)
+  succcedent : CFR_Category(High CFR)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  580|  351|
+----|-----|-----|
+¬A  |  830| 1059|
+----|-----|-----|
+
+
+=== CFR Rule 2 ===
+
+
+Rule id : 2
+
+Base :   375  Relative base : 0.133  CONF : 0.691  AAD : +0.381  BAD : -0.381
+
+Cedents:
+  antecedent : black_category(High Black Population) & income_category(Medium (40-60k))
+  succcedent : CFR_Category(High CFR)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  375|  168|
+----|-----|-----|
+¬A  | 1035| 1242|
+----|-----|-----|
+
+
+=== CFR Rule 3 ===
+
+
+Rule id : 3
+
+Base :   553  Relative base : 0.196  CONF : 0.577  AAD : +0.154  BAD : -0.154
+
+Cedents:
+  antecedent : black_category(Medium Black Population)
+  succcedent : CFR_Category(Low CFR)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  553|  405|
+----|-----|-----|
+¬A  |  857| 1005|
+----|-----|-----|
+
+
+=== CFR Rule 4 ===
+
+
+Rule id : 4
+
+Base :   499  Relative base : 0.177  CONF : 0.623  AAD : +0.246  BAD : -0.246
+
+Cedents:
+  antecedent : income_category(High (60-80k))
+  succcedent : CFR_Category(Low CFR)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  499|  302|
+----|-----|-----|
+¬A  |  911| 1108|
+----|-----|-----|
+
+
+=== CFR Rule 5 ===
+
+
+Rule id : 5
+
+Base :   312  Relative base : 0.111  CONF : 0.661  AAD : +0.322  BAD : -0.322
+
+Cedents:
+  antecedent : income_category(High (60-80k)) & poverty_category(Low (<10%))
+  succcedent : CFR_Category(Low CFR)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  312|  160|
+----|-----|-----|
+¬A  | 1098| 1250|
+----|-----|-----|
+
+
+=== CFR Rule 6 ===
+
+
+Rule id : 6
+
+Base :   328  Relative base : 0.116  CONF : 0.607  AAD : +0.215  BAD : -0.215
+
+Cedents:
+  antecedent : income_category(Medium (40-60k)) & poverty_category(High (15-20%))
+  succcedent : CFR_Category(High CFR)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  328|  212|
+----|-----|-----|
+¬A  | 1082| 1198|
+----|-----|-----|
+
+
+=== CFR Rule 7 ===
+
+
+Rule id : 7
+
+Base :   352  Relative base : 0.125  CONF : 0.603  AAD : +0.205  BAD : -0.205
+
+Cedents:
+  antecedent : poverty_category(High (15-20%))
+  succcedent : CFR_Category(High CFR)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  352|  232|
+----|-----|-----|
+¬A  | 1058| 1178|
+----|-----|-----|
+
+
+=== CFR Rule 8 ===
+
+
+Rule id : 8
+
+Base :   463  Relative base : 0.164  CONF : 0.626  AAD : +0.251  BAD : -0.251
+
+Cedents:
+  antecedent : poverty_category(Low (<10%))
+  succcedent : CFR_Category(Low CFR)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  463|  277|
+----|-----|-----|
+¬A  |  947| 1133|
+----|-----|-----|
+
+
+=== CFR Rule 9 ===
+
+
+Rule id : 9
+
+Base :   244  Relative base : 0.087  CONF : 0.687  AAD : +0.375  BAD : -0.375
+
+Cedents:
+  antecedent : poverty_category(Very High (20%+))
+  succcedent : CFR_Category(High CFR)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  244|  111|
+----|-----|-----|
+¬A  | 1166| 1299|
+----|-----|-----|
+
+
+
+=== Detailed Rules - Deaths ===
+
+=== Deaths Rule 1 ===
+
+
+Rule id : 1
+
+Base :   556  Relative base : 0.197  CONF : 0.597  AAD : +0.194  BAD : -0.194
+
+Cedents:
+  antecedent : black_category(High Black Population)
+  succcedent : deaths_category(High Deaths)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  556|  375|
+----|-----|-----|
+¬A  |  854| 1035|
+----|-----|-----|
+
+
+=== Deaths Rule 2 ===
+
+
+Rule id : 2
+
+Base :   382  Relative base : 0.135  CONF : 0.703  AAD : +0.407  BAD : -0.407
+
+Cedents:
+  antecedent : black_category(High Black Population) & income_category(Medium (40-60k))
+  succcedent : deaths_category(High Deaths)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  382|  161|
+----|-----|-----|
+¬A  | 1028| 1249|
+----|-----|-----|
+
+
+=== Deaths Rule 3 ===
+
+
+Rule id : 3
+
+Base :   497  Relative base : 0.176  CONF : 0.620  AAD : +0.241  BAD : -0.241
+
+Cedents:
+  antecedent : income_category(High (60-80k))
+  succcedent : deaths_category(Low Deaths)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  497|  304|
+----|-----|-----|
+¬A  |  913| 1106|
+----|-----|-----|
+
+
+=== Deaths Rule 4 ===
+
+
+Rule id : 4
+
+Base :   286  Relative base : 0.101  CONF : 0.606  AAD : +0.212  BAD : -0.212
+
+Cedents:
+  antecedent : income_category(High (60-80k)) & poverty_category(Low (<10%))
+  succcedent : deaths_category(Low Deaths)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  286|  186|
+----|-----|-----|
+¬A  | 1124| 1224|
+----|-----|-----|
+
+
+=== Deaths Rule 5 ===
+
+
+Rule id : 5
+
+Base :   329  Relative base : 0.117  CONF : 0.609  AAD : +0.219  BAD : -0.219
+
+Cedents:
+  antecedent : income_category(Medium (40-60k)) & poverty_category(High (15-20%))
+  succcedent : deaths_category(High Deaths)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  329|  211|
+----|-----|-----|
+¬A  | 1081| 1199|
+----|-----|-----|
+
+
+=== Deaths Rule 6 ===
+
+
+Rule id : 6
+
+Base :   353  Relative base : 0.125  CONF : 0.604  AAD : +0.209  BAD : -0.209
+
+Cedents:
+  antecedent : poverty_category(High (15-20%))
+  succcedent : deaths_category(High Deaths)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  353|  231|
+----|-----|-----|
+¬A  | 1057| 1179|
+----|-----|-----|
+
+
+=== Deaths Rule 7 ===
+
+
+Rule id : 7
+
+Base :   455  Relative base : 0.161  CONF : 0.615  AAD : +0.230  BAD : -0.230
+
+Cedents:
+  antecedent : poverty_category(Low (<10%))
+  succcedent : deaths_category(Low Deaths)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  455|  285|
+----|-----|-----|
+¬A  |  955| 1125|
+----|-----|-----|
+
+
+=== Deaths Rule 8 ===
+
+
+Rule id : 8
+
+Base :   260  Relative base : 0.092  CONF : 0.732  AAD : +0.465  BAD : -0.465
+
+Cedents:
+  antecedent : poverty_category(Very High (20%+))
+  succcedent : deaths_category(High Deaths)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  260|   95|
+----|-----|-----|
+¬A  | 1150| 1315|
+----|-----|-----|
+

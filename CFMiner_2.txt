@@ -1,0 +1,91 @@
+=== TEMPORAL ANALYSIS: Where mortality WORSENED between waves ===
+
+Wave 1: March-June 2020
+Wave 2: September-December 2020
+
+
+CleverMiner task processing summary:
+
+Task type : CFMiner
+Number of verifications : 5
+Number of rules : 5
+Total time needed : 00h 00m 00s
+Time of data preparation : 00h 00m 00s
+Time of rule mining : 00h 00m 00s
+
+
+
+
+List of rules:
+RULEID BASE  S_UP  S_DOWN Condition
+     1  1578     1     2 income_category(Medium (40-60k))
+     2   911     1     2 income_category(Medium (40-60k)) & county_size(Small County)
+     3  1060     1     2 poverty_category(Medium (10-15%))
+     4  1341     2     1 county_size(Large County)
+     5  1341     1     2 county_size(Small County)
+
+
+=== Rule 1 ===
+
+
+Rule id : 1
+
+Base :  1578  Relative base : 0.588  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   388  Histogram minimum :   231  Histogram relative maximum : 0.246 Histogram relative minimum : 0.146 
+
+Condition  : income_category(Medium (40-60k))
+
+Categories in target variable  ['Large', 'Medium', 'Small', 'Very Large', 'Very Small']
+Histogram                      [388, 313, 264, 382, 231]
+
+
+=== Rule 2 ===
+
+
+Rule id : 2
+
+Base :   911  Relative base : 0.340  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   300  Histogram minimum :   131  Histogram relative maximum : 0.329 Histogram relative minimum : 0.144 
+
+Condition  : income_category(Medium (40-60k)) & county_size(Small County)
+
+Categories in target variable  ['Large', 'Medium', 'Small', 'Very Large', 'Very Small']
+Histogram                      [199, 149, 132, 300, 131]
+
+
+=== Rule 3 ===
+
+
+Rule id : 3
+
+Base :  1060  Relative base : 0.395  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :   234  Histogram minimum :   178  Histogram relative maximum : 0.221 Histogram relative minimum : 0.168 
+
+Condition  : poverty_category(Medium (10-15%))
+
+Categories in target variable  ['Large', 'Medium', 'Small', 'Very Large', 'Very Small']
+Histogram                      [207, 234, 224, 178, 217]
+
+
+=== Rule 4 ===
+
+
+Rule id : 4
+
+Base :  1341  Relative base : 0.500  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :   336  Histogram minimum :   112  Histogram relative maximum : 0.251 Histogram relative minimum : 0.084 
+
+Condition  : county_size(Large County)
+
+Categories in target variable  ['Large', 'Medium', 'Small', 'Very Large', 'Very Small']
+Histogram                      [253, 306, 336, 112, 334]
+
+
+=== Rule 5 ===
+
+
+Rule id : 5
+
+Base :  1341  Relative base : 0.500  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   425  Histogram minimum :   200  Histogram relative maximum : 0.317 Histogram relative minimum : 0.149 
+
+Condition  : county_size(Small County)
+
+Categories in target variable  ['Large', 'Medium', 'Small', 'Very Large', 'Very Small']
+Histogram                      [283, 230, 200, 425, 203]
+

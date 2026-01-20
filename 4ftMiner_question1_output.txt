@@ -1,0 +1,42 @@
+=== Shrnutí ===
+
+CleverMiner task processing summary:
+
+Task type : 4ftMiner
+Number of verifications : 2
+Number of rules : 1
+Total time needed : 00h 00m 00s
+Time of data preparation : 00h 00m 00s
+Time of rule mining : 00h 00m 00s
+
+
+=== Seznam pravidel ===
+
+List of rules:
+RULEID BASE  CONF  AAD    Rule
+     1   632 0.376 +0.134 income_category(Medium (40-60k)) => CFR_Category(High) | ---
+
+
+=== Jednotlivá pravidla ===
+
+=== Rule 1 ===
+
+
+
+Rule id : 1
+
+Base :   632  Relative base : 0.224  CONF : 0.376  AAD : +0.134  BAD : -0.134
+
+Cedents:
+  antecedent : income_category(Medium (40-60k))
+  succcedent : CFR_Category(High)
+  condition  : ---
+
+Fourfold table
+    |  S  |  ¬S |
+----|-----|-----|
+ A  |  632| 1047|
+----|-----|-----|
+¬A  |  304|  837|
+----|-----|-----|
+

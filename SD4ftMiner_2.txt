@@ -1,0 +1,74 @@
+=== SD4FT-MINER ANALYSIS REPORT ===
+
+Task: Race Disparity Analysis (Poverty -> High Mortality)
+
+Group 1 (FRST): Black Significant (>20% population)
+Group 2 (SCND): White Dominant (>85% population)
+
+
+CleverMiner task processing summary:
+
+Task type : SD4ftMiner
+Number of verifications : 14
+Number of rules : 2
+Total time needed : 00h 00m 00s
+Time of data preparation : 00h 00m 00s
+Time of rule mining : 00h 00m 00s
+
+
+---------------------------------------------------
+NALEZENÁ PRAVIDLA (Seřazeno podle síly rozdílu):
+---------------------------------------------------
+
+
+List of rules:
+RULEID BASE1 BASE2 RatioConf DeltaConf Rule
+     1   105   189    1.286    +0.167  poverty_category(High (15-20%)) => CFR_level(High CFR) | --- : Race_Context(Black_Significant) x Race_Context(White_Dominant)
+     2   224   610    1.506    +0.264  income_category(Medium (40-60k)) => CFR_level(High CFR) | --- : Race_Context(Black_Significant) x Race_Context(White_Dominant)
+
+
+=== Rule 1 ===
+
+
+Rule id : 1
+
+Base1 :   105 Base2 :   189  Relative base 1 : 0.037 Relative base 2 : 0.067 CONF1 : 0.750  CONF2 : +0.583  Delta Conf : +0.167 Ratio Conf : +1.286
+
+Cedents:
+  antecedent : poverty_category(High (15-20%))
+  succcedent : CFR_level(High CFR)
+  condition  : ---
+  first set  : Race_Context(Black_Significant)
+  second set : Race_Context(White_Dominant)
+
+Fourfold tables:
+FRST|  S  |  ¬S |  SCND|  S  |  ¬S |
+----|-----|-----|  ----|-----|-----| 
+ A  |  105|   35|   A  |  189|  135|
+----|-----|-----|  ----|-----|-----|
+¬A  |  225|   79|  ¬A  |  706|  911|
+----|-----|-----|  ----|-----|-----|
+
+
+=== Rule 2 ===
+
+
+Rule id : 2
+
+Base1 :   224 Base2 :   610  Relative base 1 : 0.079 Relative base 2 : 0.216 CONF1 : 0.786  CONF2 : +0.522  Delta Conf : +0.264 Ratio Conf : +1.506
+
+Cedents:
+  antecedent : income_category(Medium (40-60k))
+  succcedent : CFR_level(High CFR)
+  condition  : ---
+  first set  : Race_Context(Black_Significant)
+  second set : Race_Context(White_Dominant)
+
+Fourfold tables:
+FRST|  S  |  ¬S |  SCND|  S  |  ¬S |
+----|-----|-----|  ----|-----|-----| 
+ A  |  224|   61|   A  |  610|  559|
+----|-----|-----|  ----|-----|-----|
+¬A  |  106|   53|  ¬A  |  285|  487|
+----|-----|-----|  ----|-----|-----|
+
