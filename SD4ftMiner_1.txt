@@ -1,12 +1,11 @@
-=== SD4FT-MINER: Gender Differences ===
-
-Comparing: More Females vs More Males
+=== SD4FT-MINER: Vliv pohlaví na pravidla ===
+Srovnáváme okresy s vyšším podílem žen vs. nižším podílem žen.
 
 
 CleverMiner task processing summary:
 
 Task type : SD4ftMiner
-Number of verifications : 16
+Number of verifications : 4
 Number of rules : 2
 Total time needed : 00h 00m 00s
 Time of data preparation : 00h 00m 00s
@@ -17,8 +16,8 @@ Time of rule mining : 00h 00m 00s
 
 List of rules:
 RULEID BASE1 BASE2 RatioConf DeltaConf Rule
-     1   345   537    1.372    +0.170  county_size(Small) => CFR_level(High CFR) | --- : gender_group(More Females) x gender_group(More Males)
-     2   642   207    1.452    +0.170  county_size(Small) => CFR_level(Low CFR) | --- : gender_group(More Males) x gender_group(More Females)
+     1   512   206    1.343    +0.129  county_size(Large) => CFR_level(High CFR) | --- : gender_group(Higher Female %) x gender_group(Lower Female %)
+     2   350   482    1.344    +0.163  county_size(Small) => CFR_level(High CFR) | --- : gender_group(Higher Female %) x gender_group(Lower Female %)
 
 
 === Rule 1 ===
@@ -26,21 +25,21 @@ RULEID BASE1 BASE2 RatioConf DeltaConf Rule
 
 Rule id : 1
 
-Base1 :   345 Base2 :   537  Relative base 1 : 0.110 Relative base 2 : 0.171 CONF1 : 0.625  CONF2 : +0.455  Delta Conf : +0.170 Ratio Conf : +1.372
+Base1 :   512 Base2 :   206  Relative base 1 : 0.163 Relative base 2 : 0.066 CONF1 : 0.505  CONF2 : +0.376  Delta Conf : +0.129 Ratio Conf : +1.343
 
 Cedents:
-  antecedent : county_size(Small)
+  antecedent : county_size(Large)
   succcedent : CFR_level(High CFR)
   condition  : ---
-  first set  : gender_group(More Females)
-  second set : gender_group(More Males)
+  first set  : gender_group(Higher Female %)
+  second set : gender_group(Lower Female %)
 
 Fourfold tables:
 FRST|  S  |  ¬S |  SCND|  S  |  ¬S |
 ----|-----|-----|  ----|-----|-----| 
- A  |  345|  207|   A  |  537|  642|
+ A  |  512|  502|   A  |  206|  342|
 ----|-----|-----|  ----|-----|-----|
-¬A  |  504|  489|  ¬A  |  173|  244|
+¬A  |  350|  198|  ¬A  |  482|  532|
 ----|-----|-----|  ----|-----|-----|
 
 
@@ -49,20 +48,20 @@ FRST|  S  |  ¬S |  SCND|  S  |  ¬S |
 
 Rule id : 2
 
-Base1 :   642 Base2 :   207  Relative base 1 : 0.204 Relative base 2 : 0.066 CONF1 : 0.545  CONF2 : +0.375  Delta Conf : +0.170 Ratio Conf : +1.452
+Base1 :   350 Base2 :   482  Relative base 1 : 0.111 Relative base 2 : 0.153 CONF1 : 0.639  CONF2 : +0.475  Delta Conf : +0.163 Ratio Conf : +1.344
 
 Cedents:
   antecedent : county_size(Small)
-  succcedent : CFR_level(Low CFR)
+  succcedent : CFR_level(High CFR)
   condition  : ---
-  first set  : gender_group(More Males)
-  second set : gender_group(More Females)
+  first set  : gender_group(Higher Female %)
+  second set : gender_group(Lower Female %)
 
 Fourfold tables:
 FRST|  S  |  ¬S |  SCND|  S  |  ¬S |
 ----|-----|-----|  ----|-----|-----| 
- A  |  642|  537|   A  |  207|  345|
+ A  |  350|  198|   A  |  482|  532|
 ----|-----|-----|  ----|-----|-----|
-¬A  |  244|  173|  ¬A  |  489|  504|
+¬A  |  512|  502|  ¬A  |  206|  342|
 ----|-----|-----|  ----|-----|-----|
 

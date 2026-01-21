@@ -42,10 +42,12 @@ df_mining['gender_category'] = df_mining['female_percent'].apply(
 # Vytvoříme 5 kategorií (více kategorií = jemnější histogram)
 df_mining['CFR_ordinal'] = pd.qcut(
     df_mining['case_fatality_rate_pct'], 
-    q=5,  # 5 kategorií
-    labels=['Very Low CFR', 'Low CFR', 'Medium CFR', 'High CFR', 'Very High CFR'],
+    q=5,
+    
+    labels=['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High'],
     duplicates='drop'
 )
+
 df_mining['CFR_ordinal'] = df_mining['CFR_ordinal'].astype(str)
 
 print(f"Po filtrování: {len(df_mining)}")

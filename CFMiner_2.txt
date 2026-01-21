@@ -7,8 +7,8 @@ Wave 2: September-December 2020
 CleverMiner task processing summary:
 
 Task type : CFMiner
-Number of verifications : 5
-Number of rules : 5
+Number of verifications : 7
+Number of rules : 7
 Total time needed : 00h 00m 00s
 Time of data preparation : 00h 00m 00s
 Time of rule mining : 00h 00m 00s
@@ -18,11 +18,13 @@ Time of rule mining : 00h 00m 00s
 
 List of rules:
 RULEID BASE  S_UP  S_DOWN Condition
-     1  1578     1     2 income_category(Medium (40-60k))
-     2   911     1     2 income_category(Medium (40-60k)) & county_size(Small County)
-     3  1060     1     2 poverty_category(Medium (10-15%))
-     4  1341     2     1 county_size(Large County)
-     5  1341     1     2 county_size(Small County)
+     1   831     1     3 income_category(High (60-80k))
+     2  1733     4     0 income_category(Medium (40-60k))
+     3   810     3     1 income_category(Medium (40-60k)) & poverty_category(Medium (10-15%))
+     4   996     4     0 income_category(Medium (40-60k)) & county_size(Small County)
+     5  1144     2     2 poverty_category(Medium (10-15%))
+     6  1479     1     3 county_size(Large County)
+     7  1479     3     1 county_size(Small County)
 
 
 === Rule 1 ===
@@ -30,12 +32,12 @@ RULEID BASE  S_UP  S_DOWN Condition
 
 Rule id : 1
 
-Base :  1578  Relative base : 0.588  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   388  Histogram minimum :   231  Histogram relative maximum : 0.246 Histogram relative minimum : 0.146 
+Base :   831  Relative base : 0.281  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   227  Histogram minimum :    88  Histogram relative maximum : 0.273 Histogram relative minimum : 0.106 
 
-Condition  : income_category(Medium (40-60k))
+Condition  : income_category(High (60-80k))
 
-Categories in target variable  ['Large', 'Medium', 'Small', 'Very Large', 'Very Small']
-Histogram                      [388, 313, 264, 382, 231]
+Categories in target variable  ['1_Very Small', '2_Small', '3_Medium', '4_Large', '5_Very Large']
+Histogram                      [201, 227, 194, 121, 88]
 
 
 === Rule 2 ===
@@ -43,12 +45,12 @@ Histogram                      [388, 313, 264, 382, 231]
 
 Rule id : 2
 
-Base :   911  Relative base : 0.340  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   300  Histogram minimum :   131  Histogram relative maximum : 0.329 Histogram relative minimum : 0.144 
+Base :  1733  Relative base : 0.586  Steps UP (consecutive) :     4  Steps DOWN (consecutive) :     0  Steps UP (any) :     4  Steps DOWN (any) :     0  Histogram maximum :   426  Histogram minimum :   246  Histogram relative maximum : 0.246 Histogram relative minimum : 0.142 
 
-Condition  : income_category(Medium (40-60k)) & county_size(Small County)
+Condition  : income_category(Medium (40-60k))
 
-Categories in target variable  ['Large', 'Medium', 'Small', 'Very Large', 'Very Small']
-Histogram                      [199, 149, 132, 300, 131]
+Categories in target variable  ['1_Very Small', '2_Small', '3_Medium', '4_Large', '5_Very Large']
+Histogram                      [246, 285, 351, 425, 426]
 
 
 === Rule 3 ===
@@ -56,12 +58,12 @@ Histogram                      [199, 149, 132, 300, 131]
 
 Rule id : 3
 
-Base :  1060  Relative base : 0.395  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :   234  Histogram minimum :   178  Histogram relative maximum : 0.221 Histogram relative minimum : 0.168 
+Base :   810  Relative base : 0.274  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :   178  Histogram minimum :   144  Histogram relative maximum : 0.220 Histogram relative minimum : 0.178 
 
-Condition  : poverty_category(Medium (10-15%))
+Condition  : income_category(Medium (40-60k)) & poverty_category(Medium (10-15%))
 
-Categories in target variable  ['Large', 'Medium', 'Small', 'Very Large', 'Very Small']
-Histogram                      [207, 234, 224, 178, 217]
+Categories in target variable  ['1_Very Small', '2_Small', '3_Medium', '4_Large', '5_Very Large']
+Histogram                      [144, 147, 174, 178, 167]
 
 
 === Rule 4 ===
@@ -69,12 +71,12 @@ Histogram                      [207, 234, 224, 178, 217]
 
 Rule id : 4
 
-Base :  1341  Relative base : 0.500  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :   336  Histogram minimum :   112  Histogram relative maximum : 0.251 Histogram relative minimum : 0.084 
+Base :   996  Relative base : 0.337  Steps UP (consecutive) :     4  Steps DOWN (consecutive) :     0  Steps UP (any) :     4  Steps DOWN (any) :     0  Histogram maximum :   328  Histogram minimum :   139  Histogram relative maximum : 0.329 Histogram relative minimum : 0.140 
 
-Condition  : county_size(Large County)
+Condition  : income_category(Medium (40-60k)) & county_size(Small County)
 
-Categories in target variable  ['Large', 'Medium', 'Small', 'Very Large', 'Very Small']
-Histogram                      [253, 306, 336, 112, 334]
+Categories in target variable  ['1_Very Small', '2_Small', '3_Medium', '4_Large', '5_Very Large']
+Histogram                      [139, 148, 160, 221, 328]
 
 
 === Rule 5 ===
@@ -82,10 +84,36 @@ Histogram                      [253, 306, 336, 112, 334]
 
 Rule id : 5
 
-Base :  1341  Relative base : 0.500  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   425  Histogram minimum :   200  Histogram relative maximum : 0.317 Histogram relative minimum : 0.149 
+Base :  1144  Relative base : 0.387  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :   259  Histogram minimum :   190  Histogram relative maximum : 0.226 Histogram relative minimum : 0.166 
+
+Condition  : poverty_category(Medium (10-15%))
+
+Categories in target variable  ['1_Very Small', '2_Small', '3_Medium', '4_Large', '5_Very Large']
+Histogram                      [226, 249, 259, 220, 190]
+
+
+=== Rule 6 ===
+
+
+Rule id : 6
+
+Base :  1479  Relative base : 0.500  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   368  Histogram minimum :   128  Histogram relative maximum : 0.249 Histogram relative minimum : 0.087 
+
+Condition  : county_size(Large County)
+
+Categories in target variable  ['1_Very Small', '2_Small', '3_Medium', '4_Large', '5_Very Large']
+Histogram                      [366, 368, 345, 272, 128]
+
+
+=== Rule 7 ===
+
+
+Rule id : 7
+
+Base :  1479  Relative base : 0.500  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :   464  Histogram minimum :   223  Histogram relative maximum : 0.314 Histogram relative minimum : 0.151 
 
 Condition  : county_size(Small County)
 
-Categories in target variable  ['Large', 'Medium', 'Small', 'Very Large', 'Very Small']
-Histogram                      [283, 230, 200, 425, 203]
+Categories in target variable  ['1_Very Small', '2_Small', '3_Medium', '4_Large', '5_Very Large']
+Histogram                      [226, 223, 247, 319, 464]
 

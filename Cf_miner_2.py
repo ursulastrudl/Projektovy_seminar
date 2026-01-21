@@ -54,7 +54,7 @@ df_mining['county_size'] = df_mining['total_population'].apply(
 df_mining['deaths_increase_ordinal'] = pd.qcut(
     df_mining['deaths_per_100k_increase'], 
     q=5,
-    labels=['Very Small', 'Small', 'Medium', 'Large', 'Very Large'],
+    labels=['1_Very Small', '2_Small', '3_Medium', '4_Large', '5_Very Large'], 
     duplicates='drop'
 )
 df_mining['deaths_increase_ordinal'] = df_mining['deaths_increase_ordinal'].astype(str)
