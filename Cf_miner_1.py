@@ -3,21 +3,18 @@ from cleverminer import cleverminer
 import io
 import sys
 
-# 1. Načtení dat
 df = pd.read_csv('merged_data.csv', delimiter=',', engine='python', on_bad_lines='skip')
 df = df.sort_values(by=['fips', 'date'])
 df_final = df.drop_duplicates(subset=['fips'], keep='last').copy()
 
 print(f"Finální počet okresů: {len(df_final)}")
 
-# 2. Příprava dat - odstranění Unknown a NaN
+
 df_mining = df_final[df_final['income_category'] != 'Unknown'].copy()
 df_mining = df_mining[df_mining['poverty_category'] != 'Unknown'].copy()
 df_mining = df_mining[df_mining['case_fatality_rate_pct'].notna()].copy()
 
-# 3. Vytvoření dodatečných kategorií
 
-# County size
 p33_pop = df_mining['total_population'].quantile(0.33)
 p67_pop = df_mining['total_population'].quantile(0.67)
 
@@ -31,15 +28,13 @@ def categorize_population(val):
 
 df_mining['county_size'] = df_mining['total_population'].apply(categorize_population)
 
-# Gender ratio
 df_mining['female_percent'] = (df_mining['total_female'] / df_mining['total_population']) * 100
 median_female = df_mining['female_percent'].median()
 df_mining['gender_category'] = df_mining['female_percent'].apply(
     lambda x: 'Higher Female %' if x > median_female else 'Lower Female %'
 )
 
-# 4. KLÍČOVÉ: Diskretizace CFR na ORDINÁLNÍ kategorie pro CF-Miner
-# Vytvoříme 5 kategorií (více kategorií = jemnější histogram)
+
 df_mining['CFR_ordinal'] = pd.qcut(
     df_mining['case_fatality_rate_pct'], 
     q=5,
@@ -52,7 +47,6 @@ df_mining['CFR_ordinal'] = df_mining['CFR_ordinal'].astype(str)
 
 print(f"Po filtrování: {len(df_mining)}")
 
-# 5. DEBUG: Distribuce
 print("\n=== CFR Distribution ===")
 print(f"Mean CFR: {df_mining['case_fatality_rate_pct'].mean():.3f}%")
 print(f"Median CFR: {df_mining['case_fatality_rate_pct'].median():.3f}%")
@@ -71,9 +65,9 @@ print(df_mining['county_size'].value_counts())
 print("\nGender Category:")
 print(df_mining['gender_category'].value_counts())
 
-# 6. Výběr sloupců pro CF-Miner
+
 df_cfminer = df_mining[[
-    'CFR_ordinal',  # TARGET - musí být kategorie!
+    'CFR_ordinal',  
     'income_category',
     'poverty_category',
     'county_size',
@@ -82,14 +76,14 @@ df_cfminer = df_mining[[
 
 print(f"\nFinální data pro CF-Miner: {len(df_cfminer)} rows")
 
-# 7. CF-Miner - Hledání podmínek kde CFR KLESÁ
+
 print("\n\n=== CF-MINER: Podmínky s poklesem úmrtnosti ===")
 
 clm_down = cleverminer(
     df=df_cfminer,
-    target='CFR_ordinal',  # Ordinální kategorie
+    target='CFR_ordinal',  
     proc='CFMiner',
-    quantifiers={'S_Down': 1, 'Base': 100},  # Alespoň 1 krok dolů v histogramu
+    quantifiers={'S_Down': 1, 'Base': 100},  
     cond={
         'attributes': [
             {'name': 'income_category', 'type': 'subset', 'minlen': 1, 'maxlen': 1},
@@ -98,7 +92,7 @@ clm_down = cleverminer(
             {'name': 'gender_category', 'type': 'subset', 'minlen': 1, 'maxlen': 1}
         ], 
         'minlen': 1, 
-        'maxlen': 2,  # Max 2 podmínky kombinované
+        'maxlen': 2,  
         'type': 'con'
     }
 )
@@ -106,31 +100,9 @@ clm_down = cleverminer(
 print("=== Rules: Conditions where CFR is DECLINING ===")
 clm_down.print_rulelist()
 
-# 8. BONUS: Také zkusíme hledat kde CFR ROSTE (pro kontrast)
-print("\n\n=== CF-MINER: Podmínky s nárůstem úmrtnosti (pro srovnání) ===")
 
-clm_up = cleverminer(
-    df=df_cfminer,
-    target='CFR_ordinal',
-    proc='CFMiner',
-    quantifiers={'S_Up': 1, 'Base': 100},  # Alespoň 1 krok nahoru
-    cond={
-        'attributes': [
-            {'name': 'income_category', 'type': 'subset', 'minlen': 1, 'maxlen': 1},
-            {'name': 'poverty_category', 'type': 'subset', 'minlen': 1, 'maxlen': 1},
-            {'name': 'county_size', 'type': 'subset', 'minlen': 1, 'maxlen': 1},
-            {'name': 'gender_category', 'type': 'subset', 'minlen': 1, 'maxlen': 1}
-        ], 
-        'minlen': 1, 
-        'maxlen': 2,
-        'type': 'con'
-    }
-)
 
-print("=== Rules: Conditions where CFR is RISING ===")
-clm_up.print_rulelist()
 
-# 9. Uložení výsledků
 output = io.StringIO()
 sys.stdout = output
 
@@ -150,19 +122,6 @@ print("\n\nDetailed Rules:")
 for i in range(1, len(clm_down.rulelist) + 1):
     print(f"\n--- Rule {i} (DECLINE) ---")
     clm_down.print_rule(i)
-
-print("\n" + "=" * 80)
-print("=== RISING MORTALITY (S_Up) - For Comparison ===")
-print("=" * 80)
-print("\nSummary:")
-clm_up.print_summary()
-print("\nRules:")
-clm_up.print_rulelist()
-
-print("\n\nDetailed Rules:")
-for i in range(1, len(clm_up.rulelist) + 1):
-    print(f"\n--- Rule {i} (RISE) ---")
-    clm_up.print_rule(i)
 
 sys.stdout = sys.__stdout__
 

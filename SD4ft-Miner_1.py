@@ -3,59 +3,48 @@ from cleverminer import cleverminer
 import io
 import sys
 
-# 1. Načtení a příprava dat (standardní postup)
+
 df = pd.read_csv('merged_data.csv', delimiter=',', engine='python', on_bad_lines='skip')
 df = df.sort_values(by=['fips', 'date'])
 df_final = df.drop_duplicates(subset=['fips'], keep='last').copy()
 
-# Filtrování prázdných hodnot
 df_mining = df_final[df_final['case_fatality_rate_pct'].notna()].copy()
 
-# Výpočet % žen (to musíme udělat)
 df_mining['female_percent'] = (df_mining['total_female'] / df_mining['total_population']) * 100
 
 print(f"Počet okresů: {len(df_mining)}")
 
-# ==============================================================================
-# 2. ZJEDNODUŠENÁ KATEGORIZACE (Bez ručních mediánů)
-# ==============================================================================
-
-# GENDER: Rozdělíme na 2 poloviny (q=2) -> "Nižší % žen" a "Vyšší % žen"
-# Pandas si ten střed najde sám.
 df_mining['gender_group'] = pd.qcut(
     df_mining['female_percent'], 
     q=2, 
     labels=['Lower Female %', 'Higher Female %']
 )
 
-# COUNTY SIZE: Rozdělíme na 2 poloviny -> "Small" a "Large"
+
 df_mining['county_size'] = pd.qcut(
     df_mining['total_population'], 
     q=2, 
     labels=['Small', 'Large']
 )
 
-# CFR (Úmrtnost): Rozdělíme na 2 poloviny -> "Low CFR" a "High CFR"
+
 df_mining['CFR_level'] = pd.qcut(
     df_mining['case_fatality_rate_pct'], 
     q=2, 
     labels=['Low CFR', 'High CFR']
 )
 
-# Převedeme na text (pro jistotu, aby to CleverMiner vzal)
+
 df_mining['gender_group'] = df_mining['gender_group'].astype(str)
 df_mining['county_size'] = df_mining['county_size'].astype(str)
 df_mining['CFR_level'] = df_mining['CFR_level'].astype(str)
 
-# Kontrola rozdělení (mělo by to být cca půl na půl)
+
 print("\n=== Automatické rozdělení ===")
 print(df_mining['gender_group'].value_counts())
 print(df_mining['county_size'].value_counts())
 
-# ==============================================================================
-# 3. SD4ft-MINER
-# ==============================================================================
-# Cíl: Zjistit, jestli se pravidla liší v okresech s VÍCE ženami vs. MÉNĚ ženami.
+
 
 df_sd4ft = df_mining[['gender_group', 'county_size', 'CFR_level']].copy()
 
@@ -103,7 +92,7 @@ clm = cleverminer(
     }
 )
 
-# 4. Výstup
+# Výstup
 output = io.StringIO()
 sys.stdout = output
 

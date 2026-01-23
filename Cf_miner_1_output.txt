@@ -1,0 +1,785 @@
+================================================================================
+CF-MINER ANALYSIS: Where Do We See Decline in COVID-19 Mortality?
+================================================================================
+
+Research Question: What conditions are associated with LOWER mortality rates?
+(Looking for protective factors)
+
+=== DECLINING MORTALITY (S_Down) ===
+
+Summary:
+
+CleverMiner task processing summary:
+
+Task type : CFMiner
+Number of verifications : 60
+Number of rules : 54
+Total time needed : 00h 00m 00s
+Time of data preparation : 00h 00m 00s
+Time of rule mining : 00h 00m 00s
+
+
+Rules:
+
+List of rules:
+RULEID BASE  S_UP  S_DOWN Condition
+     1   874     0     4 income_category(High (60-80k))
+     2   504     1     3 income_category(High (60-80k)) & poverty_category(Low (<10%))
+     3   343     1     2 income_category(High (60-80k)) & poverty_category(Medium (10-15%))
+     4   408     1     3 income_category(High (60-80k)) & county_size(Large County)
+     5   261     1     2 income_category(High (60-80k)) & county_size(Medium County)
+     6   205     1     3 income_category(High (60-80k)) & county_size(Small County)
+     7   399     1     3 income_category(High (60-80k)) & gender_category(Higher Female %)
+     8   475     0     4 income_category(High (60-80k)) & gender_category(Lower Female %)
+     9   200     3     1 income_category(Low (<40k))
+    10   170     3     1 income_category(Low (<40k)) & poverty_category(Very High (20%+))
+    11   123     2     1 income_category(Low (<40k)) & county_size(Small County)
+    12   625     3     1 income_category(Medium (40-60k)) & poverty_category(High (15-20%))
+    13   102     1     2 income_category(Medium (40-60k)) & poverty_category(Low (<10%))
+    14   883     1     2 income_category(Medium (40-60k)) & poverty_category(Medium (10-15%))
+    15   445     2     2 income_category(Medium (40-60k)) & county_size(Large County)
+    16   708     3     1 income_category(Medium (40-60k)) & county_size(Medium County)
+    17   689     2     2 income_category(Medium (40-60k)) & county_size(Small County)
+    18   920     3     1 income_category(Medium (40-60k)) & gender_category(Higher Female %)
+    19   922     2     2 income_category(Medium (40-60k)) & gender_category(Lower Female %)
+    20   215     1     3 income_category(Very High (80k+))
+    21   202     1     3 income_category(Very High (80k+)) & poverty_category(Low (<10%))
+    22   170     1     2 income_category(Very High (80k+)) & county_size(Large County)
+    23   127     1     2 income_category(Very High (80k+)) & gender_category(Higher Female %)
+    24   683     2     1 poverty_category(High (15-20%))
+    25   186     2     2 poverty_category(High (15-20%)) & county_size(Large County)
+    26   269     3     1 poverty_category(High (15-20%)) & county_size(Medium County)
+    27   228     3     1 poverty_category(High (15-20%)) & county_size(Small County)
+    28   389     3     1 poverty_category(High (15-20%)) & gender_category(Higher Female %)
+    29   294     2     2 poverty_category(High (15-20%)) & gender_category(Lower Female %)
+    30   808     0     4 poverty_category(Low (<10%))
+    31   364     1     3 poverty_category(Low (<10%)) & county_size(Large County)
+    32   229     0     4 poverty_category(Low (<10%)) & county_size(Medium County)
+    33   215     1     2 poverty_category(Low (<10%)) & county_size(Small County)
+    34   347     1     3 poverty_category(Low (<10%)) & gender_category(Higher Female %)
+    35   461     0     4 poverty_category(Low (<10%)) & gender_category(Lower Female %)
+    36  1238     1     3 poverty_category(Medium (10-15%))
+    37   427     2     2 poverty_category(Medium (10-15%)) & county_size(Large County)
+    38   407     2     2 poverty_category(Medium (10-15%)) & county_size(Medium County)
+    39   404     2     2 poverty_category(Medium (10-15%)) & county_size(Small County)
+    40   586     2     2 poverty_category(Medium (10-15%)) & gender_category(Higher Female %)
+    41   652     1     3 poverty_category(Medium (10-15%)) & gender_category(Lower Female %)
+    42   164     3     1 poverty_category(Very High (20%+)) & county_size(Medium County)
+    43   163     2     1 poverty_category(Very High (20%+)) & gender_category(Lower Female %)
+    44  1031     1     3 county_size(Large County)
+    45   733     2     2 county_size(Large County) & gender_category(Higher Female %)
+    46   298     1     3 county_size(Large County) & gender_category(Lower Female %)
+    47  1069     3     1 county_size(Medium County)
+    48   512     3     1 county_size(Medium County) & gender_category(Higher Female %)
+    49   557     2     1 county_size(Medium County) & gender_category(Lower Female %)
+    50  1031     2     2 county_size(Small County)
+    51   316     3     1 county_size(Small County) & gender_category(Higher Female %)
+    52   715     2     2 county_size(Small County) & gender_category(Lower Female %)
+    53  1561     3     1 gender_category(Higher Female %)
+    54  1570     1     3 gender_category(Lower Female %)
+
+
+
+Detailed Rules:
+
+--- Rule 1 (DECLINE) ---
+
+
+Rule id : 1
+
+Base :   874  Relative base : 0.279  Steps UP (consecutive) :     0  Steps DOWN (consecutive) :     4  Steps UP (any) :     0  Steps DOWN (any) :     4  Histogram maximum :   223  Histogram minimum :    92  Histogram relative maximum : 0.255 Histogram relative minimum : 0.105 
+
+Condition  : income_category(High (60-80k))
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [223, 218, 189, 152, 92]
+
+
+--- Rule 2 (DECLINE) ---
+
+
+Rule id : 2
+
+Base :   504  Relative base : 0.161  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   139  Histogram minimum :    51  Histogram relative maximum : 0.276 Histogram relative minimum : 0.101 
+
+Condition  : income_category(High (60-80k)) & poverty_category(Low (<10%))
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [137, 139, 99, 78, 51]
+
+
+--- Rule 3 (DECLINE) ---
+
+
+Rule id : 3
+
+Base :   343  Relative base : 0.110  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :    84  Histogram minimum :    39  Histogram relative maximum : 0.245 Histogram relative minimum : 0.114 
+
+Condition  : income_category(High (60-80k)) & poverty_category(Medium (10-15%))
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [76, 74, 84, 70, 39]
+
+
+--- Rule 4 (DECLINE) ---
+
+
+Rule id : 4
+
+Base :   408  Relative base : 0.130  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   122  Histogram minimum :    34  Histogram relative maximum : 0.299 Histogram relative minimum : 0.083 
+
+Condition  : income_category(High (60-80k)) & county_size(Large County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [78, 122, 107, 67, 34]
+
+
+--- Rule 5 (DECLINE) ---
+
+
+Rule id : 5
+
+Base :   261  Relative base : 0.083  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :    74  Histogram minimum :    25  Histogram relative maximum : 0.284 Histogram relative minimum : 0.096 
+
+Condition  : income_category(High (60-80k)) & county_size(Medium County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [74, 57, 50, 55, 25]
+
+
+--- Rule 6 (DECLINE) ---
+
+
+Rule id : 6
+
+Base :   205  Relative base : 0.065  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :    71  Histogram minimum :    30  Histogram relative maximum : 0.346 Histogram relative minimum : 0.146 
+
+Condition  : income_category(High (60-80k)) & county_size(Small County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [71, 39, 32, 30, 33]
+
+
+--- Rule 7 (DECLINE) ---
+
+
+Rule id : 7
+
+Base :   399  Relative base : 0.127  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   111  Histogram minimum :    41  Histogram relative maximum : 0.278 Histogram relative minimum : 0.103 
+
+Condition  : income_category(High (60-80k)) & gender_category(Higher Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [69, 111, 97, 81, 41]
+
+
+--- Rule 8 (DECLINE) ---
+
+
+Rule id : 8
+
+Base :   475  Relative base : 0.152  Steps UP (consecutive) :     0  Steps DOWN (consecutive) :     4  Steps UP (any) :     0  Steps DOWN (any) :     4  Histogram maximum :   154  Histogram minimum :    51  Histogram relative maximum : 0.324 Histogram relative minimum : 0.107 
+
+Condition  : income_category(High (60-80k)) & gender_category(Lower Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [154, 107, 92, 71, 51]
+
+
+--- Rule 9 (DECLINE) ---
+
+
+Rule id : 9
+
+Base :   200  Relative base : 0.064  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :    82  Histogram minimum :    26  Histogram relative maximum : 0.410 Histogram relative minimum : 0.130 
+
+Condition  : income_category(Low (<40k))
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [29, 26, 27, 36, 82]
+
+
+--- Rule 10 (DECLINE) ---
+
+
+Rule id : 10
+
+Base :   170  Relative base : 0.054  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :    72  Histogram minimum :    22  Histogram relative maximum : 0.424 Histogram relative minimum : 0.129 
+
+Condition  : income_category(Low (<40k)) & poverty_category(Very High (20%+))
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [24, 22, 25, 27, 72]
+
+
+--- Rule 11 (DECLINE) ---
+
+
+Rule id : 11
+
+Base :   123  Relative base : 0.039  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     1  Steps UP (any) :     2  Steps DOWN (any) :     1  Histogram maximum :    49  Histogram minimum :    16  Histogram relative maximum : 0.398 Histogram relative minimum : 0.130 
+
+Condition  : income_category(Low (<40k)) & county_size(Small County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [18, 18, 16, 22, 49]
+
+
+--- Rule 12 (DECLINE) ---
+
+
+Rule id : 12
+
+Base :   625  Relative base : 0.200  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :   155  Histogram minimum :    91  Histogram relative maximum : 0.248 Histogram relative minimum : 0.146 
+
+Condition  : income_category(Medium (40-60k)) & poverty_category(High (15-20%))
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [91, 96, 134, 155, 149]
+
+
+--- Rule 13 (DECLINE) ---
+
+
+Rule id : 13
+
+Base :   102  Relative base : 0.033  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :    25  Histogram minimum :    17  Histogram relative maximum : 0.245 Histogram relative minimum : 0.167 
+
+Condition  : income_category(Medium (40-60k)) & poverty_category(Low (<10%))
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [21, 20, 17, 25, 19]
+
+
+--- Rule 14 (DECLINE) ---
+
+
+Rule id : 14
+
+Base :   883  Relative base : 0.282  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :   190  Histogram minimum :   169  Histogram relative maximum : 0.215 Histogram relative minimum : 0.191 
+
+Condition  : income_category(Medium (40-60k)) & poverty_category(Medium (10-15%))
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [169, 190, 176, 172, 176]
+
+
+--- Rule 15 (DECLINE) ---
+
+
+Rule id : 15
+
+Base :   445  Relative base : 0.142  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :   118  Histogram minimum :    50  Histogram relative maximum : 0.265 Histogram relative minimum : 0.112 
+
+Condition  : income_category(Medium (40-60k)) & county_size(Large County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [50, 96, 118, 112, 69]
+
+
+--- Rule 16 (DECLINE) ---
+
+
+Rule id : 16
+
+Base :   708  Relative base : 0.226  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :   165  Histogram minimum :    96  Histogram relative maximum : 0.233 Histogram relative minimum : 0.136 
+
+Condition  : income_category(Medium (40-60k)) & county_size(Medium County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [96, 135, 160, 165, 152]
+
+
+--- Rule 17 (DECLINE) ---
+
+
+Rule id : 17
+
+Base :   689  Relative base : 0.220  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :   201  Histogram minimum :    90  Histogram relative maximum : 0.292 Histogram relative minimum : 0.131 
+
+Condition  : income_category(Medium (40-60k)) & county_size(Small County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [161, 105, 90, 132, 201]
+
+
+--- Rule 18 (DECLINE) ---
+
+
+Rule id : 18
+
+Base :   920  Relative base : 0.294  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :   234  Histogram minimum :   113  Histogram relative maximum : 0.254 Histogram relative minimum : 0.123 
+
+Condition  : income_category(Medium (40-60k)) & gender_category(Higher Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [113, 147, 204, 234, 222]
+
+
+--- Rule 19 (DECLINE) ---
+
+
+Rule id : 19
+
+Base :   922  Relative base : 0.294  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :   200  Histogram minimum :   164  Histogram relative maximum : 0.217 Histogram relative minimum : 0.178 
+
+Condition  : income_category(Medium (40-60k)) & gender_category(Lower Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [194, 189, 164, 175, 200]
+
+
+--- Rule 20 (DECLINE) ---
+
+
+Rule id : 20
+
+Base :   215  Relative base : 0.069  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :    68  Histogram minimum :    27  Histogram relative maximum : 0.316 Histogram relative minimum : 0.126 
+
+Condition  : income_category(Very High (80k+))
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [68, 59, 31, 27, 30]
+
+
+--- Rule 21 (DECLINE) ---
+
+
+Rule id : 21
+
+Base :   202  Relative base : 0.065  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :    65  Histogram minimum :    25  Histogram relative maximum : 0.322 Histogram relative minimum : 0.124 
+
+Condition  : income_category(Very High (80k+)) & poverty_category(Low (<10%))
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [65, 55, 29, 25, 28]
+
+
+--- Rule 22 (DECLINE) ---
+
+
+Rule id : 22
+
+Base :   170  Relative base : 0.054  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :    49  Histogram minimum :    19  Histogram relative maximum : 0.288 Histogram relative minimum : 0.112 
+
+Condition  : income_category(Very High (80k+)) & county_size(Large County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [48, 49, 28, 19, 26]
+
+
+--- Rule 23 (DECLINE) ---
+
+
+Rule id : 23
+
+Base :   127  Relative base : 0.041  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :    35  Histogram minimum :    17  Histogram relative maximum : 0.276 Histogram relative minimum : 0.134 
+
+Condition  : income_category(Very High (80k+)) & gender_category(Higher Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [30, 35, 19, 17, 26]
+
+
+--- Rule 24 (DECLINE) ---
+
+
+Rule id : 24
+
+Base :   683  Relative base : 0.218  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     1  Steps UP (any) :     2  Steps DOWN (any) :     1  Histogram maximum :   168  Histogram minimum :   105  Histogram relative maximum : 0.246 Histogram relative minimum : 0.154 
+
+Condition  : poverty_category(High (15-20%))
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [105, 105, 142, 168, 163]
+
+
+--- Rule 25 (DECLINE) ---
+
+
+Rule id : 25
+
+Base :   186  Relative base : 0.059  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :    47  Histogram minimum :    27  Histogram relative maximum : 0.253 Histogram relative minimum : 0.145 
+
+Condition  : poverty_category(High (15-20%)) & county_size(Large County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [27, 36, 47, 46, 30]
+
+
+--- Rule 26 (DECLINE) ---
+
+
+Rule id : 26
+
+Base :   269  Relative base : 0.086  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :    73  Histogram minimum :    28  Histogram relative maximum : 0.271 Histogram relative minimum : 0.104 
+
+Condition  : poverty_category(High (15-20%)) & county_size(Medium County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [28, 42, 63, 73, 63]
+
+
+--- Rule 27 (DECLINE) ---
+
+
+Rule id : 27
+
+Base :   228  Relative base : 0.073  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :    70  Histogram minimum :    27  Histogram relative maximum : 0.307 Histogram relative minimum : 0.118 
+
+Condition  : poverty_category(High (15-20%)) & county_size(Small County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [50, 27, 32, 49, 70]
+
+
+--- Rule 28 (DECLINE) ---
+
+
+Rule id : 28
+
+Base :   389  Relative base : 0.124  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :   105  Histogram minimum :    43  Histogram relative maximum : 0.270 Histogram relative minimum : 0.111 
+
+Condition  : poverty_category(High (15-20%)) & gender_category(Higher Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [43, 52, 90, 105, 99]
+
+
+--- Rule 29 (DECLINE) ---
+
+
+Rule id : 29
+
+Base :   294  Relative base : 0.094  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :    64  Histogram minimum :    52  Histogram relative maximum : 0.218 Histogram relative minimum : 0.177 
+
+Condition  : poverty_category(High (15-20%)) & gender_category(Lower Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [62, 53, 52, 63, 64]
+
+
+--- Rule 30 (DECLINE) ---
+
+
+Rule id : 30
+
+Base :   808  Relative base : 0.258  Steps UP (consecutive) :     0  Steps DOWN (consecutive) :     4  Steps UP (any) :     0  Steps DOWN (any) :     4  Histogram maximum :   223  Histogram minimum :    98  Histogram relative maximum : 0.276 Histogram relative minimum : 0.121 
+
+Condition  : poverty_category(Low (<10%))
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [223, 214, 145, 128, 98]
+
+
+--- Rule 31 (DECLINE) ---
+
+
+Rule id : 31
+
+Base :   364  Relative base : 0.116  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   116  Histogram minimum :    43  Histogram relative maximum : 0.319 Histogram relative minimum : 0.118 
+
+Condition  : poverty_category(Low (<10%)) & county_size(Large County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [88, 116, 73, 44, 43]
+
+
+--- Rule 32 (DECLINE) ---
+
+
+Rule id : 32
+
+Base :   229  Relative base : 0.073  Steps UP (consecutive) :     0  Steps DOWN (consecutive) :     4  Steps UP (any) :     0  Steps DOWN (any) :     4  Histogram maximum :    69  Histogram minimum :    17  Histogram relative maximum : 0.301 Histogram relative minimum : 0.074 
+
+Condition  : poverty_category(Low (<10%)) & county_size(Medium County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [69, 58, 43, 42, 17]
+
+
+--- Rule 33 (DECLINE) ---
+
+
+Rule id : 33
+
+Base :   215  Relative base : 0.069  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     2  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :    66  Histogram minimum :    29  Histogram relative maximum : 0.307 Histogram relative minimum : 0.135 
+
+Condition  : poverty_category(Low (<10%)) & county_size(Small County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [66, 40, 29, 42, 38]
+
+
+--- Rule 34 (DECLINE) ---
+
+
+Rule id : 34
+
+Base :   347  Relative base : 0.111  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   101  Histogram minimum :    54  Histogram relative maximum : 0.291 Histogram relative minimum : 0.156 
+
+Condition  : poverty_category(Low (<10%)) & gender_category(Higher Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [72, 101, 62, 58, 54]
+
+
+--- Rule 35 (DECLINE) ---
+
+
+Rule id : 35
+
+Base :   461  Relative base : 0.147  Steps UP (consecutive) :     0  Steps DOWN (consecutive) :     4  Steps UP (any) :     0  Steps DOWN (any) :     4  Histogram maximum :   151  Histogram minimum :    44  Histogram relative maximum : 0.328 Histogram relative minimum : 0.095 
+
+Condition  : poverty_category(Low (<10%)) & gender_category(Lower Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [151, 113, 83, 70, 44]
+
+
+--- Rule 36 (DECLINE) ---
+
+
+Rule id : 36
+
+Base :  1238  Relative base : 0.395  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   268  Histogram minimum :   215  Histogram relative maximum : 0.216 Histogram relative minimum : 0.174 
+
+Condition  : poverty_category(Medium (10-15%))
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [249, 268, 262, 244, 215]
+
+
+--- Rule 37 (DECLINE) ---
+
+
+Rule id : 37
+
+Base :   427  Relative base : 0.136  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :   124  Histogram minimum :    43  Histogram relative maximum : 0.290 Histogram relative minimum : 0.101 
+
+Condition  : poverty_category(Medium (10-15%)) & county_size(Large County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [58, 109, 124, 93, 43]
+
+
+--- Rule 38 (DECLINE) ---
+
+
+Rule id : 38
+
+Base :   407  Relative base : 0.130  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :    91  Histogram minimum :    69  Histogram relative maximum : 0.224 Histogram relative minimum : 0.170 
+
+Condition  : poverty_category(Medium (10-15%)) & county_size(Medium County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [72, 88, 91, 87, 69]
+
+
+--- Rule 39 (DECLINE) ---
+
+
+Rule id : 39
+
+Base :   404  Relative base : 0.129  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :   119  Histogram minimum :    47  Histogram relative maximum : 0.295 Histogram relative minimum : 0.116 
+
+Condition  : poverty_category(Medium (10-15%)) & county_size(Small County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [119, 71, 47, 64, 103]
+
+
+--- Rule 40 (DECLINE) ---
+
+
+Rule id : 40
+
+Base :   586  Relative base : 0.187  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :   144  Histogram minimum :    84  Histogram relative maximum : 0.246 Histogram relative minimum : 0.143 
+
+Condition  : poverty_category(Medium (10-15%)) & gender_category(Higher Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [84, 125, 144, 139, 94]
+
+
+--- Rule 41 (DECLINE) ---
+
+
+Rule id : 41
+
+Base :   652  Relative base : 0.208  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   165  Histogram minimum :   105  Histogram relative maximum : 0.253 Histogram relative minimum : 0.161 
+
+Condition  : poverty_category(Medium (10-15%)) & gender_category(Lower Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [165, 143, 118, 105, 121]
+
+
+--- Rule 42 (DECLINE) ---
+
+
+Rule id : 42
+
+Base :   164  Relative base : 0.052  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :    60  Histogram minimum :    18  Histogram relative maximum : 0.366 Histogram relative minimum : 0.110 
+
+Condition  : poverty_category(Very High (20%+)) & county_size(Medium County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [23, 18, 25, 38, 60]
+
+
+--- Rule 43 (DECLINE) ---
+
+
+Rule id : 43
+
+Base :   163  Relative base : 0.052  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     1  Steps UP (any) :     2  Steps DOWN (any) :     1  Histogram maximum :    57  Histogram minimum :    23  Histogram relative maximum : 0.350 Histogram relative minimum : 0.141 
+
+Condition  : poverty_category(Very High (20%+)) & gender_category(Lower Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [28, 23, 23, 32, 57]
+
+
+--- Rule 44 (DECLINE) ---
+
+
+Rule id : 44
+
+Base :  1031  Relative base : 0.329  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   268  Histogram minimum :   133  Histogram relative maximum : 0.260 Histogram relative minimum : 0.129 
+
+Condition  : county_size(Large County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [177, 268, 255, 198, 133]
+
+
+--- Rule 45 (DECLINE) ---
+
+
+Rule id : 45
+
+Base :   733  Relative base : 0.234  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :   185  Histogram minimum :    96  Histogram relative maximum : 0.252 Histogram relative minimum : 0.131 
+
+Condition  : county_size(Large County) & gender_category(Higher Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [96, 179, 185, 165, 108]
+
+
+--- Rule 46 (DECLINE) ---
+
+
+Rule id : 46
+
+Base :   298  Relative base : 0.095  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :    89  Histogram minimum :    25  Histogram relative maximum : 0.299 Histogram relative minimum : 0.084 
+
+Condition  : county_size(Large County) & gender_category(Lower Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [81, 89, 70, 33, 25]
+
+
+--- Rule 47 (DECLINE) ---
+
+
+Rule id : 47
+
+Base :  1069  Relative base : 0.341  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :   240  Histogram minimum :   192  Histogram relative maximum : 0.225 Histogram relative minimum : 0.180 
+
+Condition  : county_size(Medium County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [192, 206, 222, 240, 209]
+
+
+--- Rule 48 (DECLINE) ---
+
+
+Rule id : 48
+
+Base :   512  Relative base : 0.164  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :   123  Histogram minimum :    74  Histogram relative maximum : 0.240 Histogram relative minimum : 0.145 
+
+Condition  : county_size(Medium County) & gender_category(Higher Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [74, 91, 106, 123, 118]
+
+
+--- Rule 49 (DECLINE) ---
+
+
+Rule id : 49
+
+Base :   557  Relative base : 0.178  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     1  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :   118  Histogram minimum :    91  Histogram relative maximum : 0.212 Histogram relative minimum : 0.163 
+
+Condition  : county_size(Medium County) & gender_category(Lower Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [118, 115, 116, 117, 91]
+
+
+--- Rule 50 (DECLINE) ---
+
+
+Rule id : 50
+
+Base :  1031  Relative base : 0.329  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :   284  Histogram minimum :   138  Histogram relative maximum : 0.275 Histogram relative minimum : 0.134 
+
+Condition  : county_size(Small County)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [258, 165, 138, 186, 284]
+
+
+--- Rule 51 (DECLINE) ---
+
+
+Rule id : 51
+
+Base :   316  Relative base : 0.101  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :   114  Histogram minimum :    37  Histogram relative maximum : 0.361 Histogram relative minimum : 0.117 
+
+Condition  : county_size(Small County) & gender_category(Higher Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [51, 37, 48, 66, 114]
+
+
+--- Rule 52 (DECLINE) ---
+
+
+Rule id : 52
+
+Base :   715  Relative base : 0.228  Steps UP (consecutive) :     2  Steps DOWN (consecutive) :     2  Steps UP (any) :     2  Steps DOWN (any) :     2  Histogram maximum :   207  Histogram minimum :    90  Histogram relative maximum : 0.290 Histogram relative minimum : 0.126 
+
+Condition  : county_size(Small County) & gender_category(Lower Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [207, 128, 90, 120, 170]
+
+
+--- Rule 53 (DECLINE) ---
+
+
+Rule id : 53
+
+Base :  1561  Relative base : 0.499  Steps UP (consecutive) :     3  Steps DOWN (consecutive) :     1  Steps UP (any) :     3  Steps DOWN (any) :     1  Histogram maximum :   354  Histogram minimum :   221  Histogram relative maximum : 0.227 Histogram relative minimum : 0.142 
+
+Condition  : gender_category(Higher Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [221, 307, 339, 354, 340]
+
+
+--- Rule 54 (DECLINE) ---
+
+
+Rule id : 54
+
+Base :  1570  Relative base : 0.501  Steps UP (consecutive) :     1  Steps DOWN (consecutive) :     3  Steps UP (any) :     1  Steps DOWN (any) :     3  Histogram maximum :   406  Histogram minimum :   270  Histogram relative maximum : 0.259 Histogram relative minimum : 0.172 
+
+Condition  : gender_category(Lower Female %)
+
+Categories in target variable  ['1_Very Low', '2_Low', '3_Medium', '4_High', '5_Very High']
+Histogram                      [406, 332, 276, 270, 286]
+
