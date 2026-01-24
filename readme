@@ -1,0 +1,10 @@
+Raději doplněno na vysvětlení jednotlivých souborů:
+Složka bigquery: jednotlivé kédy pro čištění dat a samotná csv po spuštění daných skriptů
+
+CleverMiner: označeno vždy typem mineru ě příslušný výstup lze vidět v daném output.txt
+
+Rozhodovací strom: decision_tree.py ozhodovaci_strom.png
+
+PoverBI: Covid_analysis.final.pbix 
+
+Závěrečná zpráva: zaverecna_zprava.pptx
